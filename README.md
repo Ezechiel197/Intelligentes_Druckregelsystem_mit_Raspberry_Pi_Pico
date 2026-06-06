@@ -1,14 +1,16 @@
 This project focuses on reading pressure data using a dedicated sensor and displaying it graphically via a custom user interface developed with PySide6. 
 It is primarily designed for various testing environments, including tests for cold gas thrusters as well as flow and pressure control units.
 
-Key Features
-Dual-Core Architecture: * Core 0: Handles user interaction via a Serial Command interface, system safety limits, and the active pressure regulation logic.
+**Key Features**
+**Dual-Core Architecture:** 
 
-Core 1: Dedicated solely to continuous Modbus RTU (RS485) communication with the pressure sensor, ensuring zero latency.
+**Core 0:** Handles user interaction via a Serial Command interface, system safety limits, and the active pressure regulation logic.
 
-Hardware FIFO Inter-Core Communication: Sensor data is passed between Core 1 and Core 0 asynchronously using the RP2040's hardware FIFO, preventing loop blocking.
+**Core 1:** Dedicated solely to continuous Modbus RTU (RS485) communication with the pressure sensor, ensuring zero latency.
 
-Smart Valve Control (Kick-and-Hold PWM): The system opens the 24V valve with a full-power "kick" pulse (e.g., 20ms) and then drops to a low-power PWM duty cycle
+**Hardware FIFO Inter-Core Communication:** Sensor data is passed between Core 1 and Core 0 asynchronously using the RP2040's hardware FIFO, preventing loop blocking.
+
+**Smart Valve Control (Kick-and-Hold PWM):** The system opens the 24V valve with a full-power "kick" pulse (e.g., 20ms) and then drops to a low-power PWM duty cycle
 
 to hold it open. This drastically reduces power consumption and prevents coil overheating.
 
@@ -16,13 +18,15 @@ Hysteresis Regulation: Uses a configurable two-point controller with hysteresis 
 
 Failsafe & Keep-Alive: Includes a configurable watchdog. If the host PC stops sending commands, the system automatically shuts off the valve to prevent overpressure.
 
-Hardware Setup
-Microcontroller: Raspberry Pi Pico 
+**Hardware Setup**
+**Microcontroller:** Raspberry Pi Pico 
 
-Communication HAT: Waveshare RS485 UART HAT (connected to UART0: TX Pin 0, RX Pin 1)
+**Communication HAT:** Waveshare RS485 UART HAT (connected to UART0: TX Pin 0, RX Pin 1)
 
-Sensor: IDCT531 Pressure Sensor (Modbus RTU)
+**Sensor:** IDCT531 Pressure Sensor (Modbus RTU)
 
+**Autor**
+Ezechiel Tonkeme
 
 
 ![WhatsApp Image 2026-03-28 at 00 19 24](https://github.com/user-attachments/assets/5cf37172-645e-4ec7-848c-8637e817d7f0)
