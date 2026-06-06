@@ -20,14 +20,18 @@ Hysteresis Regulation: Uses a configurable two-point controller with hysteresis 
 
 Failsafe & Keep-Alive: Includes a configurable watchdog. If the host PC stops sending commands, the system automatically shuts off the valve to prevent overpressure.
 
-**Hardware Setup**
+---
+
+## **Hardware Setup**
 **Microcontroller:** Raspberry Pi Pico 
 
 **Communication HAT:** Waveshare RS485 UART HAT (connected to UART0: TX Pin 0, RX Pin 1)
 
 **Sensor:** IDCT531 Pressure Sensor (Modbus RTU)
 
-**Autor**
+--- 
+
+## **Autor**
 Ezechiel Tonkeme
 
 
