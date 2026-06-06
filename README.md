@@ -7,19 +7,18 @@ It is primarily designed for various testing environments, including tests for c
 ## **Key Features**
 **Dual-Core Architecture:** 
 
-**Core 0:** Handles user interaction via a Serial Command interface, system safety limits, and the active pressure regulation logic.
+* :white_check_mark:**Core 0:** Handles user interaction via a Serial Command interface, system safety limits, and the active pressure regulation logic.
 
-**Core 1:** Dedicated solely to continuous Modbus RTU (RS485) communication with the pressure sensor, ensuring zero latency.
+* :white_check_mark:**Core 1:** Dedicated solely to continuous Modbus RTU (RS485) communication with the pressure sensor, ensuring zero latency.
 
-**Hardware FIFO Inter-Core Communication:** Sensor data is passed between Core 1 and Core 0 asynchronously using the RP2040's hardware FIFO, preventing loop blocking.
+* :white_check_mark:**Hardware FIFO Inter-Core Communication:** Sensor data is passed between Core 1 and Core 0 asynchronously using the RP2040's hardware FIFO, preventing loop blocking.
 
-**Smart Valve Control (Kick-and-Hold PWM):** The system opens the 24V valve with a full-power "kick" pulse (e.g., 20ms) and then drops to a low-power PWM duty cycle
+* :white_check_mark:**Smart Valve Control (Kick-and-Hold PWM):** The system opens the 24V valve with a full-power "kick" pulse (e.g., 20ms) and then drops to a low-power PWM duty cycle to hold it open.
+This drastically reduces power consumption and prevents coil overheating.
 
-to hold it open. This drastically reduces power consumption and prevents coil overheating.
+* :white_check_mark:**Hysteresis Regulation:** Uses a configurable two-point controller with hysteresis to prevent rapid, damaging valve oscillation.
 
-Hysteresis Regulation: Uses a configurable two-point controller with hysteresis to prevent rapid, damaging valve oscillation.
-
-Failsafe & Keep-Alive: Includes a configurable watchdog. If the host PC stops sending commands, the system automatically shuts off the valve to prevent overpressure.
+* :white_check_mark:**Failsafe & Keep-Alive:** Includes a configurable watchdog. If the host PC stops sending commands, the system automatically shuts off the valve to prevent overpressure.
 
 ---
 
