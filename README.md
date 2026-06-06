@@ -1,3 +1,4 @@
+## **Function**
 This project focuses on reading pressure data using a dedicated sensor and displaying it graphically via a custom user interface developed with PySide6. 
 It is primarily designed for various testing environments, including tests for cold gas thrusters as well as flow and pressure control units.
 
