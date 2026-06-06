@@ -7,9 +7,9 @@ It is primarily designed for various testing environments, including tests for c
 ## **Key Features**
 **Dual-Core Architecture:** 
 
-* :white_check_mark:**Core 0:** Handles user interaction via a Serial Command interface, system safety limits, and the active pressure regulation logic.
+:white_check_mark:**Core 0:** Handles user interaction via a Serial Command interface, system safety limits, and the active pressure regulation logic.
 
-* :white_check_mark:**Core 1:** Dedicated solely to continuous Modbus RTU (RS485) communication with the pressure sensor, ensuring zero latency.
+:white_check_mark:**Core 1:** Dedicated solely to continuous Modbus RTU (RS485) communication with the pressure sensor, ensuring zero latency.
 
 * **Hardware FIFO Inter-Core Communication:** Sensor data is passed between Core 1 and Core 0 asynchronously using the RP2040's hardware FIFO, preventing loop blocking.
 
