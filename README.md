@@ -11,23 +11,23 @@ It is primarily designed for various testing environments, including tests for c
 
 * :white_check_mark:**Core 1:** Dedicated solely to continuous Modbus RTU (RS485) communication with the pressure sensor, ensuring zero latency.
 
-* :white_check_mark:**Hardware FIFO Inter-Core Communication:** Sensor data is passed between Core 1 and Core 0 asynchronously using the RP2040's hardware FIFO, preventing loop blocking.
+* **Hardware FIFO Inter-Core Communication:** Sensor data is passed between Core 1 and Core 0 asynchronously using the RP2040's hardware FIFO, preventing loop blocking.
 
-* :white_check_mark:**Smart Valve Control (Kick-and-Hold PWM):** The system opens the 24V valve with a full-power "kick" pulse (e.g., 20ms) and then drops to a low-power PWM duty cycle to hold it open.
+* **Smart Valve Control (Kick-and-Hold PWM):** The system opens the 24V valve with a full-power "kick" pulse (e.g., 20ms) and then drops to a low-power PWM duty cycle to hold it open.
 This drastically reduces power consumption and prevents coil overheating.
 
-* :white_check_mark:**Hysteresis Regulation:** Uses a configurable two-point controller with hysteresis to prevent rapid, damaging valve oscillation.
+* **Hysteresis Regulation:** Uses a configurable two-point controller with hysteresis to prevent rapid, damaging valve oscillation.
 
-* :white_check_mark:**Failsafe & Keep-Alive:** Includes a configurable watchdog. If the host PC stops sending commands, the system automatically shuts off the valve to prevent overpressure.
+* **Failsafe & Keep-Alive:** Includes a configurable watchdog. If the host PC stops sending commands, the system automatically shuts off the valve to prevent overpressure.
 
 ---
 
 ## **Hardware Setup**
-**Microcontroller:** Raspberry Pi Pico 
+:white_check_mark:**Microcontroller:** Raspberry Pi Pico 
 
-**Communication HAT:** Waveshare RS485 UART HAT (connected to UART0: TX Pin 0, RX Pin 1)
+:white_check_mark:**Communication HAT:** Waveshare RS485 UART HAT (connected to UART0: TX Pin 0, RX Pin 1)
 
-**Sensor:** IDCT531 Pressure Sensor (Modbus RTU)
+:white_check_mark:**Sensor:** IDCT531 Pressure Sensor (Modbus RTU)
 
 --- 
 
