@@ -31,7 +31,7 @@ This drastically reduces power consumption and prevents coil overheating.
 
 --- 
 
-## :man_technologist: **Autor**
+## :man_technologist: **Author**
 
 **Ezechiel Tonkeme**
 
